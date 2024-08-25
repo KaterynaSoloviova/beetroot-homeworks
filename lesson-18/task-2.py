@@ -34,6 +34,7 @@ class Boss:
             raise TypeError('Worker must be of type list')
         self.__workers = value
 
+
 class Worker:
     def __init__(self, id_: int, name: str, company: str, boss: Boss):
         self.id = id_

@@ -11,7 +11,8 @@ class Validate:
         self.email = email
         Validate.validate(email)
 
-    def validate(email: str) -> None:
+    @classmethod
+    def validate(cls, email: str) -> None:
         email_parts = email.split("@")
         if len(email_parts) != 2:
             raise ValueError("Invalid email")
