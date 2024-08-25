@@ -7,18 +7,17 @@
 
 class Mathematician:
 
-    def square_nums(self, numbers: list[int]) -> list[int]:
+    @staticmethod
+    def square_nums(numbers: list[int]) -> list[int]:
         return [num ** 2 for num in numbers]
 
-    def remove_positives(self, numbers: list[int]) -> list[int]:
+    @staticmethod
+    def remove_positives(numbers: list[int]) -> list[int]:
         return [num for num in numbers if num <= 0]
 
-    def filter_leaps(self, years: list[int]) -> list[int]:
-        leap_years = []
-        for year in years:
-            if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
-                leap_years.append(year)
-        return leap_years
+    @staticmethod
+    def filter_leaps(years: list[int]) -> list[int]:
+        return list(filter(lambda year: (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0), years))
 
 
 m = Mathematician()
