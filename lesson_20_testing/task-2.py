@@ -23,10 +23,14 @@ def test_turn_channel(tv):
 
 
 def test_turn_channel_not_exist(tv):
-    try:
+    # try:
+    # tv.turn_channel(10)
+    # except ValueError as e:
+    # assert str(e) == "Channel 10 is not in ['BBC', 'Discovery', 'TV1000']"
+
+    with pytest.raises(ValueError) as ctx:
         tv.turn_channel(10)
-    except ValueError as e:
-        assert str(e) == "Channel 10 is not in ['BBC', 'Discovery', 'TV1000']"
+    assert str(ctx.value) == "Channel 10 is not in ['BBC', 'Discovery', 'TV1000']"
 
 
 def test_next_channel(tv):

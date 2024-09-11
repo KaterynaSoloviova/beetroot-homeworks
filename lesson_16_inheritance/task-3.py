@@ -94,7 +94,7 @@ class ProductStore:
             raise ValueError(f"Product {product_name} not found in the store.")
 
         product = self.products[product_name]
-        return (product.name, product.amount)
+        return product.name, product.amount
 
 
 p = Product('Sport', 'Football T-Shirt', 100)

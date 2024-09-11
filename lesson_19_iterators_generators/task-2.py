@@ -2,7 +2,7 @@
 # Create your own implementation of a built-in function range(), named in_range(), which takes three parameters:
 # start, end, and optional step. Tips: See the documentation for range() function
 
-def in_range(start: int, end: int = None, step: int = 1):
+def in_range(start: int, end: int | None = None, step: int = 1):
     if end is None:
         end = start
         start = 0
