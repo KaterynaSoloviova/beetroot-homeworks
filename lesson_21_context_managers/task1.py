@@ -3,14 +3,15 @@
 # Create your own class, which can behave like a built-in function open(). Also, you need to extend its functionality
 # with counter and logging. Pay special attention to the implementation of __exit__ method, which has to cover all the
 # requirements to context managers
+from io import TextIOWrapper
 
 class OpenFileManager:
     file_open_counter = 0
 
     def __init__(self, file_name: str, mode: str = "r") -> None:
-        self.file_name = file_name
-        self.mode = mode
-        self.file = None
+        self.file_name: str = file_name
+        self.mode: str = mode
+        self.file: TextIOWrapper | None = None
         self.log(f"Initialized OpenFileManager for {self.file_name} in {self.mode} mode")
 
     def __enter__(self):
