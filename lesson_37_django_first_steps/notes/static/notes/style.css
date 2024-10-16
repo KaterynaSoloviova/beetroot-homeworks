@@ -1,0 +1,18 @@
+.note-container{
+  background-color: #ffe28f;
+  border: 1px solid #0000ff;
+  max-width: 250px;
+  padding: 9px;
+  margin-bottom: 25px;
+  font-family: Monaco;
+}
+.note-author{
+  text-align: right;
+}
+.note-date{
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
+.note-text{
+  text-align: left;
+}
