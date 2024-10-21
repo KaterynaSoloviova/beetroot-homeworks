@@ -9,10 +9,12 @@
 <body>
     <h1>Lists of notes</h1>
     {% for note in notes %}
-    <div class="note-container">
+    <div class="note-container category-{{note.category}}">
       <div class="note-date">{{note.date}}</div>
+      <div class="note-title">{{note.title}}</div>
       <div class="note-text">{{note.text}}</div>
       <div class="note-author">{{note.author}}</div>
+
     </div>
     {% endfor %}
 </body>

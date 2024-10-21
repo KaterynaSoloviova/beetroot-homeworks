@@ -14,6 +14,8 @@ def notes(request: HttpRequest) -> HttpResponse:
             "date": date,
             "text": note.text,
             "author": note.author,
+            "title": note.title,
+            "category": note.category.title.lower(),
         }
         list.append(note_item)
     context = {"notes": list}

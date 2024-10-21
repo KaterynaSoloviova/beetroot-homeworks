@@ -6,6 +6,19 @@
   margin-bottom: 25px;
   font-family: Monaco;
 }
+
+.category-private{
+  background-color: #993333;
+}
+
+.category-event{
+  background-color: cornflowerblue;
+}
+
+.category-work{
+  background-color: burlywood;
+}
+
 .note-author{
   text-align: right;
 }
@@ -15,4 +28,14 @@
 }
 .note-text{
   text-align: left;
+}
+
+.note-title{
+  font-size: 1.2em;
+  font-style: oblique;
+}
+
+.note-category{
+  font-size: 1em;
+  font-style: italic;
 }
