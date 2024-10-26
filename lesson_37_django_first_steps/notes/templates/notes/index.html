@@ -1,13 +1,8 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="{% static 'notes/style.css' %}">
-    <meta charset="UTF-8">
-    <title>Notes</title>
-</head>
-<body>
-    <h1>Lists of notes</h1>
+{% extends 'notes/base.html' %}
+
+{% block content %}
+    <a href="{% url 'notes:note_create' %}">Create a new note</a>
+    <h1>Lists of notes:</h1>
     {% for note in notes %}
     <div class="note-container category-{{note.category}}">
       <div class="note-date">{{note.date}}</div>
@@ -17,5 +12,4 @@
 
     </div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}

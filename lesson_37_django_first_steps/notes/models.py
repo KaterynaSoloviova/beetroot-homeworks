@@ -5,6 +5,9 @@ from django.db import models
 class Category(models.Model):
     title = models.CharField(verbose_name='Title', max_length=250, default="")
 
+    def __str__(self):
+        return self.title
+
 
 class Note(models.Model):
     text = models.CharField(verbose_name='Text', max_length=250)
@@ -13,3 +16,6 @@ class Note(models.Model):
     title = models.CharField(verbose_name='Title', max_length=250, default="")
     reminder = models.DateTimeField(verbose_name='Reminder', default=timezone.now)
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING, default=None)
+
+    def __str__(self):
+        return f"{self.title}: {self.text}"
