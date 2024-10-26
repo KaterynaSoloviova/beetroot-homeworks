@@ -1,0 +1,41 @@
+.note-container{
+  background-color: #ffe28f;
+  border: 1px solid #0000ff;
+  max-width: 250px;
+  padding: 9px;
+  margin-bottom: 25px;
+  font-family: Monaco;
+}
+
+.category-private{
+  background-color: #993333;
+}
+
+.category-event{
+  background-color: cornflowerblue;
+}
+
+.category-work{
+  background-color: burlywood;
+}
+
+.note-author{
+  text-align: right;
+}
+.note-date{
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
+.note-text{
+  text-align: left;
+}
+
+.note-title{
+  font-size: 1.2em;
+  font-style: oblique;
+}
+
+.note-category{
+  font-size: 1em;
+  font-style: italic;
+}
