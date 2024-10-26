@@ -4,10 +4,17 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'notes:note_list' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ form.instance.pk|yesno:"Edit,Create" }}</li>
+      </ol>
+    </nav>
     <h1>{{ form.instance.pk|yesno:"Edit the note,Create the new note" }}:</h1>
     <form method="POST">
         {% csrf_token %}
         {{ form|crispy }}
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a href="{% url 'notes:note_list' %}" class="btn btn-danger">Cancel</a>
     </form>
 {% endblock %}

@@ -4,10 +4,16 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'notes:note_list' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Delete</li>
+      </ol>
+    </nav>
     <p>Do you really want to delete the note "{{ note.title }}"?</p>
     <form method="POST">
         {% csrf_token %}
-        <button type="submit">Submit</button>
-        <a href="{% url 'notes:note_list' %}">Cancel</a>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a href="{% url 'notes:note_list' %}" class="btn btn-danger">Cancel</a>
     </form>
 {% endblock %}

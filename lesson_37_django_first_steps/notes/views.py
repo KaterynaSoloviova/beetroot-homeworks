@@ -15,6 +15,7 @@ def note_list(request: HttpRequest) -> HttpResponse:
     for note in notes:
         date = note.created_date.strftime("%B %d, %Y")
         note_item = {
+            "pk": note.pk,
             "date": date,
             "text": note.text,
             "author": note.author,
