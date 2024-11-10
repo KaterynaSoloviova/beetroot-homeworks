@@ -34,7 +34,7 @@ def note_create(request: HttpRequest) -> HttpResponse:
             form.save()
             return redirect('notes:note_list')
         else:
-            return HttpResponseBadRequest('From is incorrectly filled')
+            return HttpResponseBadRequest('Form is incorrectly filled')
     else:
         form = NoteForm()
 
