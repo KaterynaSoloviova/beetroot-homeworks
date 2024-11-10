@@ -1,21 +1,22 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="{% static 'notes/style.css' %}">
-    <meta charset="UTF-8">
-    <title>Notes</title>
-</head>
-<body>
-    <h1>Lists of notes</h1>
-    {% for note in notes %}
-    <div class="note-container category-{{note.category}}">
-      <div class="note-date">{{note.date}}</div>
-      <div class="note-title">{{note.title}}</div>
-      <div class="note-text">{{note.text}}</div>
-      <div class="note-author">{{note.author}}</div>
+{% extends 'notes/base.html' %}
 
+{% block content %}
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">Home</li>
+      </ol>
+    </nav>
+    <a href="{% url 'notes:note_create' %}" class="btn btn-success">Create a new note</a>
+    <h1>Lists of notes:</h1>
+    {% for note in notes %}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body category-{{note.category}}">
+        <h5 class="card-title">{{note.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{note.date}}</h6>
+        <p class="card-text">{{note.text}}</p>
+        <a href="{% url 'notes:note_edit' note.pk %}" class="btn btn-outline-info">edit</a>
+        <a href="{% url 'notes:note_delete' note.pk %}" class="btn btn-outline-info">delete</a>
+      </div>
     </div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}

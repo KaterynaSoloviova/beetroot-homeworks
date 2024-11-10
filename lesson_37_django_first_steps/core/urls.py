@@ -15,10 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
+from django.shortcuts import redirect
+from django.urls import include, path, reverse
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('notes/', include("notes.urls")),
+    path('', lambda request: redirect(reverse('notes:note_list'))),
 ]
